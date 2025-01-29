@@ -1,4 +1,4 @@
-def get_number():
+"""def get_number():
     while True:
         try:
             n = int(input("What's n? "))
