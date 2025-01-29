@@ -1,7 +1,7 @@
 import random
 
 def get_word(prompt):
-    # TODO: Solicit a word from the user - be sure to strip it and turn it to lowercase 
+    return input(prompt).strip().lower()
 
 def build_story(noun, verb, adjective, person, place):
     templates = [
@@ -20,26 +20,30 @@ def build_story(noun, verb, adjective, person, place):
         f"They vowed to {verb} together forever. The kingdom rejoiced... until the {noun} ate the royal throne. Oops.",
 
         # Template 4: Sports Drama 🏈
-        f"At the {place} Olympics, {person} won gold by {verb}ing a {adjective} {noun}! "
+        f"At the {place} Olympics, {person.capitalize()} won gold by {verb}ing a {adjective} {noun}! "
         f"Critics called it 'the weirdest sport ever,' but the crowd chanted, '{verb.upper()}! {verb.upper()}!' "
-        "The trophy? A giant {noun}. History was made.",
+        f"The trophy? A giant {noun}. History was made.",
 
         # Template 5: Make Your own 
         # GET CREATIVE!
     ]
-    return # TODO: WHAT CODE GOES HERE?
+    return random.choice(templates)
 
 def main():
     print("\n🌟📚 THE ULTIMATE SILLY STORY GENERATOR 2.0 📚🌟\n")
-    noun = # TODO: ADD CODE
-    # now add for verb, adjective, person and place
+    noun = get_word("Please give me a noun: ")
+    verb = get_word("Please give me a verb: ")
+    person = get_word("Please give me a person: ")
+    adjective = get_word("Please give me a adjective: ")
+    place = get_word("Please give me a place: ")
+
   
     # Print out the Story
-    story = # TODO: Call the story function with al the right inputs (i.e. arguments!)
+    story = build_story(noun, verb, adjective, person, place)
   
     print("\n🔥📖 HERE IS YOUR STORY 📖🔥")
     print("=" * 45)
-    print(""" TODO: ADD CODE HERE """)
+    print(story)
     print("=" * 45)
 
 if __name__ == "__main__":
